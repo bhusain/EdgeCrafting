@@ -6,6 +6,7 @@
 
 ###################################################################
 #Import Statements
+###################################################################
 import itertools
 import numpy as np
 from scipy import linalg
@@ -41,11 +42,11 @@ import matplotlib
 matplotlib.use('agg')
 from matplotlib import pyplot as plt
 from sklearn import metrics
+
+
 ###################################################################
-
-
-d = dict()
-
+#Read Input Data: Unified Normalizeed Kidney GEM
+###################################################################
 data = pd.read_csv("kidney_GEM.txt", sep='\t')
 data = data.iloc[:, 1:]
 data = data.transpose()
@@ -55,17 +56,28 @@ data[data < 0] = 0
 global_max = data.max().max()
 global_min = data.min().min()
 
+
+###################################################################
+#Print Data Size, Max, Min
+###################################################################
+print("Data Size, Global Max, GLobal Min")
 print(data.shape, global_max, global_min)
 
+
+###################################################################
+#Read Meta Data: Unified Normalizeed Kidney GEM Labels
+###################################################################
 data_annot = pd.read_csv("kidney-labels.txt", sep='\t')
-
-
 print(data_annot.shape)
 
 labels = data_annot.iloc[:,1]
 
-c = []
+d = dict()
+c = [] // metadata_color_crray
 
+###################################################################
+#Annotate colors to samples metadata
+###################################################################
 for i in labels:
     if i == 'kich-tumor-tcga':
         c.append('g')
@@ -82,10 +94,9 @@ for i in labels:
     if i == 'kirp-tumor-tcga':
         c.append('y')
 bins = 2 * int(math.ceil(global_max))
-print(bins)
+#print(bins)
 
 count = 0
-
 threshold = int(.7 * 927)
 
 
