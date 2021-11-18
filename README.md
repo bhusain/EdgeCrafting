@@ -17,7 +17,7 @@ The normalized UnifiedKidneyGEM is available upon request.
 ```
 # a. Normalized Input GEM - Example: kidney_GEM.txt
 # b. Sample metadata labels - Example: kidney-labels.txt
-
+# c. Pre-parsed edges with low MI threshold to reduce computation
 ```
 
 ## 3) EdgeCrafting Algorithm [Modules A-D]
