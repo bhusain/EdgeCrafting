@@ -1,6 +1,6 @@
 # EdgeCrafting
 
-![GitHub Logo](EdgeCrafting.pdf)
+![GitHub Logo](EdgeCrafting.png)
 
 ## USAGE:
 
