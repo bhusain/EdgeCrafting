@@ -12,8 +12,15 @@ Details for the normalizing code can be accessed at: https://github.com/SystemsG
 
 The normalized UnifiedKidneyGEM is available upon request. 
 
+## 2) Data Requirements
 
-## 2) EdgeCrafting Algorithm [Modules A-D]
+```
+# a. Normalized Input GEM - Example: kidney_GEM.txt
+# b. Sample metadata labels - Example: kidney-labels.txt
+
+```
+
+## 3) EdgeCrafting Algorithm [Modules A-D]
 ```
 python EdgeCrafting.py 
 ```
