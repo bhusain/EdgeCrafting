@@ -6,12 +6,14 @@
 
 ## 1) Pre-processing
 
-Pre-processing includes normalizing of the input Gene expression matrix (GEM). 
+Pre-processing includes normalizing of the input Unified Kidney Gene expression matrix (GEM) 
 
-Details can be found within the NetExtractor paper, and the normalizing code can be accessed at: https://github.com/SystemsGenetics/GEMprep
+Details for the normalizing code can be accessed at: https://github.com/SystemsGenetics/GEMprep
+
+The normalized UnifiedKidneyGEM is available upon request. 
 
 
-## 2) NetExtractor Algorithm [Modules A-D]
+## 2) EdgeCrafting Algorithm [Modules A-D]
 ```
 python EdgeCrafting.py 
 ```
@@ -22,4 +24,4 @@ The code is parallelized for multiprocesses and runs on 20 threads. Modify based
 
 ### Important Notes:
 
-1) NetExtractor_output.txt will include unfiltered MI and S values. Thresholds are determined in postprocessing.
+1) EgdeCraffting_output.txt will include unfiltered MI and S values. Thresholds are determined in postprocessing.
