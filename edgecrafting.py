@@ -1,54 +1,48 @@
-import itertools
+#################################
+##.  EdgeCrafting Version 1.0. ##
+##       Benafsh Sapra         ##
+#################################
 
+
+###################################################################
+#Import Statements
+import itertools
 import numpy as np
 from scipy import linalg
 import pandas as pd
 import matplotlib.pyplot as plt
 import math
 from random import randint
-
 from math import sqrt
 from skimage import data
 from skimage.feature import blob_dog, blob_log, blob_doh
-import numpy as np
 import json
 from sklearn.metrics.cluster import adjusted_mutual_info_score
 from sklearn.metrics.cluster import normalized_mutual_info_score
-import pandas as pd
 from random import randint
 from sklearn.metrics.cluster import adjusted_mutual_info_score
 from sklearn.metrics.cluster import normalized_mutual_info_score
-
 from matplotlib import pyplot as plt
 from matplotlib import cm
 from mpl_toolkits.mplot3d.art3d import Poly3DCollection
-
 import matplotlib as mpl
 from mpl_toolkits.mplot3d import axes3d
 import matplotlib.pyplot as plt
 import matplotlib.colors as colors
 from scipy.stats import gaussian_kde
 from mpl_toolkits.mplot3d import Axes3D
-import matplotlib.pyplot as plt
-from matplotlib import cm
 from matplotlib.ticker import LinearLocator, FormatStrFormatter
-
 from scipy.stats import kde
 from mpl_toolkits.mplot3d import Axes3D
-
-
 from sklearn import mixture
-
-import numpy as np
-import pandas as pd
 import seaborn as sns
-import matplotlib.pyplot as plt
 from scipy import stats
-
 import matplotlib
 matplotlib.use('agg')
 from matplotlib import pyplot as plt
 from sklearn import metrics
+###################################################################
+
 
 d = dict()
 
