@@ -1,4 +1,4 @@
-# EdgeCrafting
+# EdgeCrafting Workflow
 
 ![GitHub Logo](EdgeCrafting.png)
 
