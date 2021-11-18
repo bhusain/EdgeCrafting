@@ -20,15 +20,19 @@ The normalized UnifiedKidneyGEM is available upon request.
 # c. Pre-parsed edges with low MI threshold to reduce computation
 ```
 
-## 3) EdgeCrafting Algorithm [Modules A-D]
+## 3) EdgeCrafting Algorithm [Modules B-D]
 ```
-python EdgeCrafting.py 
+python edgecrafting.py 
 ```
 
-This code reads in the GEM (GTEx_v7_brain_subGEM-log-no.txt) and outputs a file (NetExtractor_output.txt) which contains GeneA_name, GeneB_name, MI value, Inter-cluster score value.
+This code reads in the three input data files mentioned.
 
-The code is parallelized for multiprocesses and runs on 20 threads. Modify based on resources available.
+```
+Output
+# a. EgdeCraffting_output.txt: Edgelist of detected gene-pairs, MI values
+# b. A Folder containing plots of detected edges as a scatterplot with overlaid blobs
+```
 
 ### Important Notes:
 
-1) EgdeCraffting_output.txt will include unfiltered MI and S values. Thresholds are determined in postprocessing.
+1) EgdeCraffting_output.txt will include unfiltered MI value. Thresholds are determined in postprocessing.
