@@ -47,7 +47,7 @@ from sklearn import metrics
 ###################################################################
 #Read Input Data: Unified Normalizeed Kidney GEM
 ###################################################################
-data = pd.read_csv("kidney_GEM.txt", sep='\t')
+data = pd.read_csv("./UnifiedKidneyData/kidney_GEM.txt", sep='\t')
 data = data.iloc[:, 1:]
 data = data.transpose()
 data = data.fillna(0)
@@ -67,13 +67,13 @@ print(data.shape, global_max, global_min)
 ###################################################################
 #Read Meta Data: Unified Normalizeed Kidney GEM Labels
 ###################################################################
-data_annot = pd.read_csv("kidney-labels.txt", sep='\t')
+data_annot = pd.read_csv("./UnifiedKidneyData/kidney-labels.txt", sep='\t')
 print(data_annot.shape)
 
 labels = data_annot.iloc[:,1]
 
 d = dict()
-c = [] // metadata_color_crray
+c = [] 
 
 ###################################################################
 #Annotate colors to samples metadata
@@ -105,7 +105,7 @@ threshold = int(.7 * 927)
 #Load pre-processed Edge List
 ###################################################################
 f = open('kidney_blob.csv', 'w')
-g1 = open('kidney_blob_25.txt', 'r')
+g1 = open('./UnifiedKidneyData/kidney_blob_25.txt', 'r')
 
 
 ###################################################################
@@ -147,7 +147,7 @@ for x in g1:
                 blobs_dog = blob_dog(test, max_sigma=5, threshold=.25)
                 blobs_dog[:, 2] = blobs_dog[:, 2] * sqrt(2)
                 value = normalized_mutual_info_score(N[:, 0], N[:, 1])
-                #blobs_doh = blob_doh(test, max_sigma=10, threshold=.01)
+                blobs_doh = blob_doh(test, max_sigma=10, threshold=.01)
                 # check if one or more blob detection techniquee has more than one 'blob'
                 if len(blobs_log) > 1 or len(blobs_dog) > 1 or len(blobs_doh) > 1:
                 #if len(blobs_dog) > 1 and value > 0.95:
@@ -155,7 +155,7 @@ for x in g1:
                     print(i,j)
                     blobs_list = [blobs_dog]
                     colors = ['yellow', 'lime', 'red']
-                    titles = ['Difference of Gaussian']
+                    titles = ['Blob detected over Binned Images']
                     sequence = zip(blobs_list, colors, titles)
                     fig, axes = plt.subplots(2, 1, figsize=(9, 8))
                     ax = axes.ravel()
@@ -174,8 +174,9 @@ for x in g1:
                     plt.xlim(0, global_max)
                     plt.ylim(0, global_max)
                     plt.title(str(value))
-                    plt.show()
-                    fig.savefig('./'+str(data.columns.values[i]) + '_' + str(data.columns.values[j]) + '.png')
+                    #plt.show()
+                    ####Uncomment to save figures###
+                    #fig.savefig('./'+str(data.columns.values[i]) + '_' + str(data.columns.values[j]) + '.png')
                     #Write file with detecteed edges
                     string_val = '%s,%s,%s,%s,%0.3f\n' % (str(i), str(j), str(data.columns.values[i]), str(data.columns.values[j]), value)
                     f.write(string_val)
