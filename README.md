@@ -46,23 +46,57 @@ The 1st row forms the header indicates the name of the tissue samples, wheere as
 
 ```
 Input file: ./UnifiedKidneyData/kidney-labels.txt
+
+TCGA.KM.8639.01A.11R.2403.07	kich-tumor-tcga
+TCGA.KL.8339.01A.11R.2315.07	kich-tumor-tcga
+GTEX.ZYFD.1526.SM.5NQ7T	      kidney-gtex
+GTEX.12WSG.0826.SM.5EQ5A	kidney-gtex
+TCGA.CJ.5680.11A.01R.1541.07	kirc-normal-tcga
+TCGA.CZ.5453.11A.01R.1503.07	kirc-normal-tcga
+.
+.
+.
 ```
-### III. Pre-parsed edges with low MI threshold to reduce computation
 
+kidney-labels.txt is a tab-delimited file detailing the metadata for the tissue samples that include the following categories: 
 
-## 3) EdgeCrafting Algorithm [Modules B-D]
+```
+a. kich-tumor-tcga
+b. kich-normal-tcga
+c. kidney-gtex
+d. kirc-normal-tcga
+e. kirc-tumor-tcga
+f. kirp-normal-tcga
+g. kirp-tumor-tcga
+```
+
+### III. Pre-parsed edges with low MI threshold to reduce computation:
+
+kidney_blob_25.txt is a comma-delimited file that contains the edgelist as depicted by Module B. The file format includes: {gene1ID} {gene2ID} {gene1Name} {gene2Name} {MIValue}. The included file (kidney_blob_25.txt) contains a pre-parsed edge-list with only edges that meet the criteria of the selected MI value threshold of 0.97. Pre-parsing the file is not a requirement, and an input containing {gene1ID} {gene2ID} {gene1Name} {gene2Name} would be sufficient.
+
+```
+Input file: ./UnifiedKidneyData/kidney_blob_25.txt
+
+973,2272,RNASEH2C,SYNE4,0.995
+3886,5388,PHIP,GPR110,0.954
+0,2272,METTL21B,SYNE4,0.996
+2911,5388,TMEM102,GPR110,0.954
+488,2991,C19orf55,TMPRSS2,0.988
+.
+.
+.
+```
+
+## 3) EdgeCrafting Algorithm [Modules C-D]
 ```
 python edgecrafting.py 
 ```
 
-This code reads in the three input data files mentioned.
+This code reads in the three input data files mentioned above. It requires folder UnifiedKidneyData to be in the same directory as edgecrafting.py. 
 
 ```
 Output
-# a. EgdeCrafting_output.txt: Edgelist of detected gene-pairs, MI values
-# b. A Folder containing plots of detected edges as a scatterplot with overlaid blobs
+# a. kidney_blob.csv: Edgelist of detected gene-pairs, MI values
+# b. A Folder containing plots of detected edges as a scatterplot with overlaid blobs 
+[Need to uncomment line: fig.savefig('./'+str(data.columns.values[i]) + '_' + str(data.columns.values[j]) + '.png')]
 ```
-
-### Important Notes:
-
-1) EgdeCraffting_output.txt will include unfiltered MI value. Thresholds are determined in postprocessing.
