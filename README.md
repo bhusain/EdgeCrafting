@@ -22,11 +22,13 @@ Note all required files are coded in the ```edgecrafting.py``` as ```./UnifiedKi
 
 ## 2) Data Requirements
 
-```
-# a. Normalized Input GEM - Example: kidney_GEM.txt
-# b. Sample metadata labels - Example: kidney-labels.txt
-# c. Pre-parsed edges with low MI threshold to reduce computation
-```
+
+### I. Normalized Input GEM - Example: kidney_GEM.txt
+
+### II. Sample metadata labels - Example: kidney-labels.txt
+
+### III. Pre-parsed edges with low MI threshold to reduce computation
+
 
 ## 3) EdgeCrafting Algorithm [Modules B-D]
 ```
