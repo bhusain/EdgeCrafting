@@ -10,7 +10,7 @@ Pre-processing includes normalizing of the input Unified Kidney Gene expression 
 
 Details for the normalizing code can be accessed at: https://github.com/SystemsGenetics/GEMprep
 
-All data required to run edgecrafting out of the box example is available at https://figshare.com/s/737e8a51dc14084cb461. Perform the following steps to get the data ready:
+All data required to run edgecrafting out of the box example is available at https://doi.org/10.6084/m9.figshare.17701247. Perform the following steps to get the data ready:
 
 ```
 # a. Download UnifiedKidneyData.zip from https://figshare.com/s/737e8a51dc14084cb461
